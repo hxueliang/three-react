@@ -1,7 +1,9 @@
 /**
  * 04.react-three-fiber控制器
+ * https://github.com/pmndrs/drei
  */
 import { Canvas } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
 
 import './App.css';
 
@@ -9,6 +11,7 @@ function App() {
   return (
     <div className='App'>
       <Canvas>
+        <OrbitControls autoRotate={true} />
         <mesh>
           <boxGeometry />
           <meshPhongMaterial />
