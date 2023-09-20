@@ -1,3 +1,6 @@
+/**
+ * 02.函数式组件引用three
+ */
 import React from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
