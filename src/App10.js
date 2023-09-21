@@ -1,0 +1,33 @@
+/**
+ * 10.纹理材质
+ */
+import { Canvas, useFrame, useThree, useLoader } from '@react-three/fiber';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { OrbitControls, Environment } from '@react-three/drei';
+import { useRef, Suspense } from 'react';
+
+import './App.css';
+
+function App() {
+  return (
+    <div className='App'>
+      <Canvas camera={{ position: [0, 2, 5] }}>
+        <InfoThree></InfoThree>
+        <OrbitControls></OrbitControls>
+        <ambientLight args={[0xffffff]} intensity={0.5} />
+        <directionalLight args={[0xffffff]} position={[0, 5, 5]} intensity={0.5} />
+
+        <Suspense fallback={null}>
+        </Suspense>
+      </Canvas>
+    </div>
+  );
+}
+
+function InfoThree() {
+  const three = useThree();
+  const { camera, gl } = three;
+  console.log(three, camera, gl);
+}
+
+export default App;
