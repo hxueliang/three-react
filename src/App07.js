@@ -28,8 +28,13 @@ function BoxRotation() {
     mesh.current.rotation.y = clock.getElapsedTime();
   });
 
+  const handlerClick = event => {
+    console.log(event);
+    event.eventObject.material.color.set('blue');
+  };
+
   return (
-    <mesh ref={mesh}>
+    <mesh ref={mesh} onClick={handlerClick}>
       <boxGeometry />
       <meshPhongMaterial />
     </mesh>
