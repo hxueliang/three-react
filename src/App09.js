@@ -1,9 +1,9 @@
 /**
- * 09.useLoader与背景设置
+ * 09.Environment与背景设置
  */
 import { Canvas, useFrame, useThree, useLoader } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { OrbitControls } from '@react-three/drei';
+import { OrbitControls, Environment } from '@react-three/drei';
 import { useRef, Suspense } from 'react';
 
 import './App.css';
@@ -19,6 +19,7 @@ function App() {
 
         <Suspense>
           <Model></Model>
+          <Environment files='./assets/texture/024.hdr' background />
         </Suspense>
       </Canvas>
     </div>
