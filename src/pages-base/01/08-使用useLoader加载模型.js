@@ -1,12 +1,10 @@
 /**
- * 08.使用useLoader加载模型
+ * 08-使用useLoader加载模型
  */
 import { Canvas, useFrame, useThree, useLoader } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { OrbitControls } from '@react-three/drei';
 import { useRef, Suspense } from 'react';
-
-import './App.css';
 
 function App() {
   return (
@@ -26,7 +24,7 @@ function App() {
 }
 
 function Model() {
-  const gltf = useLoader(GLTFLoader, './assets/model/pad.gltf');
+  const gltf = useLoader(GLTFLoader, '../assets/model/pad.gltf');
   return <primitive object={gltf.scene} scale="10" />;
 }
 

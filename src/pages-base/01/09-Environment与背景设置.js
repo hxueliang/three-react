@@ -1,12 +1,10 @@
 /**
- * 09.Environment与背景设置
+ * 09-Environment与背景设置
  */
 import { Canvas, useFrame, useThree, useLoader } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { OrbitControls, Environment } from '@react-three/drei';
 import { useRef, Suspense } from 'react';
-
-import './App.css';
 
 function App() {
   return (
@@ -19,7 +17,7 @@ function App() {
 
         <Suspense>
           <Model></Model>
-          <Environment files='./assets/texture/024.hdr' background />
+          <Environment files='../assets/texture/024.hdr' background />
         </Suspense>
       </Canvas>
     </div>
@@ -27,7 +25,7 @@ function App() {
 }
 
 function Model() {
-  const gltf = useLoader(GLTFLoader, './assets/model/pad.gltf');
+  const gltf = useLoader(GLTFLoader, '../assets/model/pad.gltf');
   return <primitive object={gltf.scene} scale="10" />;
 }
 

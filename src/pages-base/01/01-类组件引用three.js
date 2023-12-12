@@ -1,14 +1,16 @@
 /**
- * 02.函数式组件引用three
+ * 01-类组件引用three
  */
 import React from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
-import './App.css';
+class App extends React.Component {
+  render() {
+    return <div></div>;
+  }
 
-function App() {
-  React.useEffect(() => {
+  componentDidMount() {
     let innerWidth = window.innerWidth;
     let innerHeight = window.innerHeight;
 
@@ -22,7 +24,7 @@ function App() {
 
     // 1.3 创建物体
     const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
-    const cubeMaterial = new THREE.MeshBasicMaterial({ color: 0x0000ff });
+    const cubeMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
     const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
     scene.add(cube);
 
@@ -44,6 +46,7 @@ function App() {
 
     // 1.8 挂载画布
     function createCanvas() {
+      document.body.innerHTML = '';
       document.body.appendChild(renderer.domElement);
     }
 
@@ -57,10 +60,7 @@ function App() {
     createControls();
     createCanvas();
     render();
-  }, []);
-  return (
-    <div className='App'></div>
-  );
+  }
 }
 
 export default App;

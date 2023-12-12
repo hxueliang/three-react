@@ -1,11 +1,9 @@
 /**
- * 06.useThree查看three信息
+ * 07-事件交互与事件对象属性
  */
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { useRef } from 'react';
-
-import './App.css';
 
 function App() {
   return (
@@ -28,8 +26,13 @@ function BoxRotation() {
     mesh.current.rotation.y = clock.getElapsedTime();
   });
 
+  const handlerClick = event => {
+    console.log(event);
+    event.eventObject.material.color.set('blue');
+  };
+
   return (
-    <mesh ref={mesh}>
+    <mesh ref={mesh} onClick={handlerClick}>
       <boxGeometry />
       <meshPhongMaterial />
     </mesh>

@@ -1,17 +1,14 @@
 /**
- * 07.事件交互与事件对象属性
+ * 05-useFrame设置动画
  */
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { useRef } from 'react';
-
-import './App.css';
 
 function App() {
   return (
     <div className='App'>
       <Canvas>
-        <InfoThree></InfoThree>
         <BoxRotation></BoxRotation>
         <ambientLight args={[0xffffff]} intensity={0.5} />
         <directionalLight args={[0xffffff]} position={[0, 5, 5]} intensity={0.5} />
@@ -28,23 +25,12 @@ function BoxRotation() {
     mesh.current.rotation.y = clock.getElapsedTime();
   });
 
-  const handlerClick = event => {
-    console.log(event);
-    event.eventObject.material.color.set('blue');
-  };
-
   return (
-    <mesh ref={mesh} onClick={handlerClick}>
+    <mesh ref={mesh}>
       <boxGeometry />
       <meshPhongMaterial />
     </mesh>
   );
-}
-
-function InfoThree() {
-  const three = useThree();
-  const { camera, gl } = three;
-  console.log(three, camera, gl);
 }
 
 export default App;

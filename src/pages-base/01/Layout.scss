@@ -1,0 +1,27 @@
+.Layout {
+  height: 100%;
+}
+
+.ant-tabs {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+
+  &-nav {
+    margin: 0 !important;
+
+    &-more {
+      color: #fff !important;
+    }
+    
+    &::before {
+      border: none !important;
+    }
+  }
+
+  &-tab {
+    color: #fff !important;
+  }
+}
+
+

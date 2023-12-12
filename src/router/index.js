@@ -1,9 +1,11 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import router0 from './common';
+import base01 from './base01';
+import common from './common';
 
 const router = createBrowserRouter([
-  ...router0,
+  ...base01,
+  ...common,
 ]);
 
 export default router;

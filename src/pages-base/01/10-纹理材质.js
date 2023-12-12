@@ -1,13 +1,11 @@
 /**
- * 10.纹理材质
+ * 10-纹理材质
  */
 import { Canvas, useFrame, useThree, useLoader } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { OrbitControls, Environment } from '@react-three/drei';
 import { useRef, Suspense } from 'react';
 import * as THREE from 'three';
-
-import './App.css';
 
 function App() {
   return (
@@ -27,7 +25,7 @@ function App() {
 }
 
 function Model() {
-  const BASE_URL = './assets/texture/';
+  const BASE_URL = '../assets/texture/';
   const [
     colorMap,
     displacementMap,

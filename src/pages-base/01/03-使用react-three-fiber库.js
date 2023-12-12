@@ -1,9 +1,8 @@
 /**
- * 03.使用react-three-fiber库
+ * 03-使用react-three-fiber库
  */
 import { Canvas } from '@react-three/fiber';
 
-import './App.css';
 
 function App() {
   return (

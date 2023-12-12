@@ -1,5 +1,5 @@
 /**
- * 11.3D水晶文字
+ * 11-3D水晶文字
  */
 import { RGBELoader } from 'three-stdlib';
 import { Canvas, useFrame, useLoader } from '@react-three/fiber';
@@ -11,9 +11,7 @@ import {
   RandomizedLight,
   useFBO,
 } from '@react-three/drei';
-import { MeshRefractionMaterial } from './material/MeshRefractionMaterial';
-
-import './App.css';
+import { MeshRefractionMaterial } from '../../material/MeshRefractionMaterial';
 
 
 export default function App() {
@@ -56,8 +54,8 @@ export default function App() {
 }
 
 function Text() {
-  const texture = useLoader(RGBELoader, './assets/texture/024.hdr');
-  let fontUrl = './assets/font/FangSong_Regular.json';
+  const texture = useLoader(RGBELoader, '../assets/texture/024.hdr');
+  let fontUrl = '../assets/font/FangSong_Regular.json';
 
   const fbo = useFBO(1024);
   let oldBg = null;
